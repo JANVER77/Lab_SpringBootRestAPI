@@ -136,7 +136,64 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"id": "51325926-c941d6bf-be2a-46b2-9891-d44e224cbbda",
+					"name": "GuardarPosteo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/publicaciones/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publicaciones",
+								"crear"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 11:20:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\",\n    \"autor\": null,\n    \"comentarios\": null,\n    \"idPosteo\": 2\n}"
+				}
+			]
 		},
 		{
 			"name": "BorrarPorId",
