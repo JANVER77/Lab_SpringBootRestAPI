@@ -318,7 +318,7 @@
 			]
 		},
 		{
-			"name": "asignarAutor",
+			"name": "crearComentario",
 			"id": "51325926-12681351-30b5-4bf2-8eaf-2b3c122ec6c0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -386,6 +386,18 @@
 					"body": "{\n    \"titulo\": \"Como mejorar comprension de lectura\",\n    \"autor\": {\n        \"id_Autor\": 2,\n        \"nombre\": \"gabriel garcia marquez\",\n        \"email\": \"gabo@cronica.com\"\n    },\n    \"comentarios\": [\n        {\n            \"id_Comentario\": 1,\n            \"text\": \"Excelente, aprender hacer esto, pero muy enredado\",\n            \"createdAt\": \"2024-01-15T10:30:00\"\n        }\n    ],\n    \"idPosteo\": 1\n}"
 				}
 			]
+		},
+		{
+			"name": "New Request",
+			"id": "51325926-da472e40-73fe-4cb5-964a-b20d87265dd6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
