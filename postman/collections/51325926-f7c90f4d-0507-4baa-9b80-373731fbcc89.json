@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "51325926-f7c90f4d-0507-4baa-9b80-373731fbcc89",
+		"name": "Lab_RestAPI_SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "todas",
+			"id": "51325926-b177790b-8444-4b1b-bd95-ffea39d54e4f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/publicaciones",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "51325926-858aef25-2a8d-4b48-b41c-0c45ae2c8893",
+					"name": "todas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/publicaciones",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publicaciones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 11:19:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"titulo\": \"Como mejorar comprension de lectura\",\n        \"autor\": {\n            \"id_Autor\": 2,\n            \"nombre\": \"gabriel garcia marquez\",\n            \"email\": \"gabo@cronica.com\"\n        },\n        \"comentarios\": [\n            {\n                \"id_Comentario\": 1,\n                \"text\": \"Excelente, aprender hacer esto, pero muy enredado\",\n                \"createdAt\": \"2024-01-15T10:30:00\"\n            }\n        ],\n        \"idPosteo\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "porId",
+			"id": "51325926-88288412-a9ba-45ff-8963-44c5635ca267",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idPosteo\": 15,\n    \"titulo\": \"Como asustar a niños pjos\",\n    \"autor\": \"Robert Englud\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/publicaciones/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GuardarPosteo",
+			"id": "51325926-92627a9c-075e-496a-92f1-c37bcecca858",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/publicaciones/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones",
+						"crear"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "51325926-c941d6bf-be2a-46b2-9891-d44e224cbbda",
+					"name": "GuardarPosteo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/publicaciones/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publicaciones",
+								"crear"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 11:20:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\",\n    \"autor\": null,\n    \"comentarios\": null,\n    \"idPosteo\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "BorrarPorId",
+			"id": "51325926-a00e13f0-540d-4be0-97e8-96bffeb068af",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/Publicaciones/borrar/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Publicaciones",
+						"borrar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar",
+			"id": "51325926-07db0e29-9ca1-43a6-ba71-f872873bb9be",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Aprendiendo SpringBoot en java\",\n    \"autor\": \"Ana Maria Alvarado\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/Publicaciones/actualizar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Publicaciones",
+						"actualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nuevoAutor",
+			"id": "51325926-521464b0-dd5a-46de-8667-61058106cc6c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"gabriel garcia marquez\",\n    \"email\": \"gabo@cronicas.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/autores/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarAutores",
+			"id": "51325926-a51e0798-5b7c-47be-849f-0637c2aab65c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/autores",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "51325926-695af7d2-a81f-4910-af14-6b18af489cd1",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/autores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 10:59:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"id_Autor\": 1,\n        \"nombre\": \"rafaelpombo\",\n        \"email\": \"pombo@rinrin.com\"\n    },\n    {\n        \"id_Autor\": 2,\n        \"nombre\": \"gabriel garcia marquez\",\n        \"email\": \"gabo@cronica.com\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "crearComentario",
+			"id": "51325926-12681351-30b5-4bf2-8eaf-2b3c122ec6c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Muy buen articulo falta ponerlo en practica\", \n    \"createdAt\": \"2026-01-15T03:30:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/publicaciones/2/comentarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones",
+						"2",
+						"comentarios"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "51325926-e9b1bc57-2688-450b-887d-c32e723dfc0c",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Excelente, aprender hacer esto, pero muy enredado\", \n    \"createdAt\": \"2024-01-15T10:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/publicaciones/1/comentarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publicaciones",
+								"1",
+								"comentarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 11:05:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"titulo\": \"Como mejorar comprension de lectura\",\n    \"autor\": {\n        \"id_Autor\": 2,\n        \"nombre\": \"gabriel garcia marquez\",\n        \"email\": \"gabo@cronica.com\"\n    },\n    \"comentarios\": [\n        {\n            \"id_Comentario\": 1,\n            \"text\": \"Excelente, aprender hacer esto, pero muy enredado\",\n            \"createdAt\": \"2024-01-15T10:30:00\"\n        }\n    ],\n    \"idPosteo\": 1\n}"
+				},
+				{
+					"id": "51325926-952eccc9-682c-42f6-9d9c-2c87c1a80206",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Muy buen articulo falta ponerlo en practica\", \n    \"createdAt\": \"2026-01-15T03:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/publicaciones/2/comentarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publicaciones",
+								"2",
+								"comentarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 11:25:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\",\n    \"autor\": {\n        \"id_Autor\": 1,\n        \"nombre\": \"rafaelpombo\",\n        \"email\": \"pombo@rinrin.com\"\n    },\n    \"comentarios\": [\n        {\n            \"id_Comentario\": 2,\n            \"text\": \"Muy buen articulo falta ponerlo en practica\",\n            \"createdAt\": \"2026-01-15T03:30:00\"\n        }\n    ],\n    \"idPosteo\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "asignarAutor",
+			"id": "51325926-da472e40-73fe-4cb5-964a-b20d87265dd6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/publicaciones/2/autores/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones",
+						"2",
+						"autores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
