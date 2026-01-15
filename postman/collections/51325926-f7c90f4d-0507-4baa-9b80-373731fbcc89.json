@@ -117,7 +117,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"titulo\": \"Como mejorar comprension de lectura\",\n    \"autor\": \"Gabo\"\n}",
+					"raw": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,14 +125,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/publicaciones/postear",
+					"raw": "localhost:8080/publicaciones/crear",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"publicaciones",
-						"postear"
+						"crear"
 					]
 				}
 			},
@@ -204,6 +204,15 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:8080/Publicaciones/borrar/3",
 					"host": [
@@ -226,8 +235,29 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Aprendiendo SpringBoot en java\",\n    \"autor\": \"Ana Maria Alvarado\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/Publicaciones/actualizar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Publicaciones",
+						"actualizar",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -266,7 +296,17 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/autores",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
 			},
 			"response": [
 				{
@@ -324,8 +364,29 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Muy buen articulo falta ponerlo en practica\", \n    \"createdAt\": \"2026-01-15T03:30:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/publicaciones/2/comentarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones",
+						"2",
+						"comentarios"
+					]
+				}
 			},
 			"response": [
 				{
