@@ -388,7 +388,7 @@
 			]
 		},
 		{
-			"name": "New Request",
+			"name": "asignarAutor",
 			"id": "51325926-da472e40-73fe-4cb5-964a-b20d87265dd6",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
