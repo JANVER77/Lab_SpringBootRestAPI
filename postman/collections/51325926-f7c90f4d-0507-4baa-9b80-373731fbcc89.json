@@ -25,7 +25,54 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"id": "51325926-858aef25-2a8d-4b48-b41c-0c45ae2c8893",
+					"name": "todas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/publicaciones",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publicaciones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 11:19:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"titulo\": \"Como mejorar comprension de lectura\",\n        \"autor\": {\n            \"id_Autor\": 2,\n            \"nombre\": \"gabriel garcia marquez\",\n            \"email\": \"gabo@cronica.com\"\n        },\n        \"comentarios\": [\n            {\n                \"id_Comentario\": 1,\n                \"text\": \"Excelente, aprender hacer esto, pero muy enredado\",\n                \"createdAt\": \"2024-01-15T10:30:00\"\n            }\n        ],\n        \"idPosteo\": 1\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "porId",
@@ -164,7 +211,54 @@
 				"method": "GET",
 				"header": []
 			},
-			"response": []
+			"response": [
+				{
+					"id": "51325926-695af7d2-a81f-4910-af14-6b18af489cd1",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/autores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 10:59:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"id_Autor\": 1,\n        \"nombre\": \"rafaelpombo\",\n        \"email\": \"pombo@rinrin.com\"\n    },\n    {\n        \"id_Autor\": 2,\n        \"nombre\": \"gabriel garcia marquez\",\n        \"email\": \"gabo@cronica.com\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "asignarAutor",
