@@ -1,54 +1,75 @@
 package com.gen.tallerPosteo.controller;
 
+import com.gen.tallerPosteo.model.Comment;
 import com.gen.tallerPosteo.model.Posteo;
-import com.gen.tallerPosteo.service.PosteoService;
+import com.gen.tallerPosteo.service.IPosteoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/Publicaciones")
+@RequestMapping("/publicaciones")
 public class PosteoController {
-    private final PosteoService posteoService;
-
+    private final IPosteoService posteoService;  // ← Interface, no clase
     @Autowired
-    public PosteoController(PosteoService posteoService) {
+    public PosteoController(IPosteoService posteoService) {
         this.posteoService = posteoService;
     }
 
-    @GetMapping("/todas")
-    public List<Posteo> listaPublicaciones(){
+    @GetMapping
+    public List<Posteo> listarTodos() {
         return posteoService.obtenerPosteos();
     }
 
     @GetMapping("/{id}")
-    public Optional<Posteo> obtenerPosteoPorId(@PathVariable Long id){
-        return posteoService.obtenerPosteosPorId(id);
+    public ResponseEntity<Posteo> obtenerPorId(@PathVariable Long id) {
+        return posteoService.obtenerPosteosPorId(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/postear")
-    public ResponseEntity<String> crearPublicacion(@RequestBody Posteo publicacion){
-        posteoService.guardarPublicacion(publicacion);
-        return ResponseEntity.ok("Publicacion exitosa!!!");
+    @PostMapping("/crear")
+    public ResponseEntity<Posteo> crearPost(@RequestBody Posteo posteo) {
+        Posteo guardado = posteoService.guardarPosteo(posteo);
+        return ResponseEntity.ok(guardado);
     }
 
-    @DeleteMapping ("/borrar/{id}")
-
-    public ResponseEntity<String> deletePersona(@PathVariable Long id) {
-        posteoService.deletPosteo(id);
-        return ResponseEntity.ok("Publicacion eliminada con éxito");
+    @PutMapping("/editar/{id}")
+    public ResponseEntity<Posteo> actualizar(
+            @PathVariable Long id,
+            @RequestBody Posteo posteoActualizado) {
+        Posteo actualizado = posteoService.editarPosteo(id, posteoActualizado);
+        return ResponseEntity.ok(actualizado);
     }
 
-    @PutMapping("/actualizar/{id}")
-    public ResponseEntity<String> actualizarPublicacion(@PathVariable Long id, @RequestBody Posteo publicacionActualizada){
-        posteoService.editarPosteo(id, publicacionActualizada);
-        return ResponseEntity.ok("Publicacion actualizada exitosamente!!!");
+    @DeleteMapping("/borrar/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Long id) {
+        posteoService.borrarPosteo(id);
+        return ResponseEntity.ok("Post Borrado con exito");
     }
 
+    @PostMapping("/{posteoId}/autores/{autorId}")
+    public ResponseEntity<Posteo> asignarAutor(
+            @PathVariable Long posteoId,
+            @PathVariable Long autorId) {
 
+        Posteo actualizado = posteoService.asignarAutor(posteoId, autorId);
+        return ResponseEntity.ok(actualizado);
+    }
 
+    @PostMapping("/{posteoId}/comentarios")
+    public ResponseEntity<Posteo> agregarComentario(
+            @PathVariable Long posteoId,
+            @RequestBody Comment comentario) {
 
+        Posteo actualizado = posteoService.agregarComentario(posteoId, comentario);
+        return ResponseEntity.ok(actualizado);    }
+
+    @GetMapping("/{posteoId}/comentarios")
+    public ResponseEntity<List<Comment>> obtenerComentarios(@PathVariable Long posteoId) {
+        List<Comment> comentarios = posteoService.obtenerComentariosPost(posteoId);
+        return ResponseEntity.ok(comentarios);
+    }
 }

@@ -11,32 +11,28 @@ import java.util.List;
 public class Posteo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPosteo;
+    private Long id_Posteo;
     private String titulo;
 
     @ManyToOne
-    @JoinColumn(name = "autor_id")
-    @JsonBackReference
-    private Comment comentariosPosteos;
+    @JoinColumn(name = "autor_id", foreignKey = @ForeignKey(name = "FK_POSTEO_AUTOR"))
+    //@JsonBackReference
+    private Author autor;
 
-    @OneToMany(mappedBy = "posteoAutor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "posteo", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Author> autores;
+    private List<Comment> comentarios;
 
     public Posteo() {
     }
 
-    public Posteo(Long idPosteo, String titulo) {
-        this.idPosteo = idPosteo;
+    public Posteo(Long id_Posteo, String titulo) {
+        this.id_Posteo = id_Posteo;
         this.titulo = titulo;
     }
 
     public Long getIdPosteo() {
-        return idPosteo;
-    }
-
-    public void setIdPosteo(Long idPosteo) {
-        this.idPosteo = idPosteo;
+        return id_Posteo = id_Posteo;
     }
 
     public String getTitulo() {
@@ -47,19 +43,19 @@ public class Posteo {
         this.titulo = titulo;
     }
 
-    public Comment getComentariosPosteos() {
-        return comentariosPosteos;
+    public Author getAutor() {
+        return autor;
     }
 
-    public void setComentariosPosteos(Comment comentariosPosteos) {
-        this.comentariosPosteos = comentariosPosteos;
+    public void setAutor(Author autor) {
+        this.autor = autor;
     }
 
-    public List<Author> getAutores() {
-        return autores;
+    public List<Comment> getComentarios() {
+        return comentarios;
     }
 
-    public void setAutores(List<Author> autores) {
-        this.autores = autores;
+    public void setComentarios(List<Comment> comentarios) {
+        this.comentarios = comentarios;
     }
 }

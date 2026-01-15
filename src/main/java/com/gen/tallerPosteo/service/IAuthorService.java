@@ -11,5 +11,5 @@ public interface IAuthorService {
     List<Author> obtenerTodos();
     Optional <Author> obtenerPorId(Long id);
     Author guardarAutor(Author autor);
-    Author agregarPosteo(long autorId, Posteo posteo);
+    Author eliminarAutor(Long id);
 }

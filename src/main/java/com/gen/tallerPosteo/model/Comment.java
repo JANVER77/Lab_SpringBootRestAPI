@@ -1,7 +1,6 @@
 package com.gen.tallerPosteo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,9 +14,10 @@ public class Comment {
     private String text;
     private String createdAt;
 
-    @OneToMany(mappedBy = "comentariosPosteos", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-    private List<Posteo> posteos;
+    @ManyToOne
+    @JoinColumn(name = "posteo_id", foreignKey = @ForeignKey(name = "FK_COMENTARIO_POSTEO"))
+    @JsonBackReference
+    private Posteo posteo;
 
 
     public Comment() {
@@ -53,11 +53,11 @@ public class Comment {
         this.createdAt = createdAt;
     }
 
-    public List<Posteo> getPosteos() {
-        return posteos;
+    public Posteo getPosteo() {
+        return posteo;
     }
 
-    public void setPosteos(List<Posteo> posteos) {
-        this.posteos = posteos;
+    public void setPosteo(Posteo posteo) {
+        this.posteo = posteo;
     }
 }

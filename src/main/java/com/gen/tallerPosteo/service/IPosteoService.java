@@ -10,9 +10,13 @@ import java.util.Set;
 
 public interface IPosteoService {
     List<Posteo> obtenerPosteos();
+    List<Comment> obtenerComentariosPost(Long idPost);
     Optional<Posteo> obtenerPosteosPorId(Long id);
     Posteo guardarPosteo(Posteo posteo);
-    Posteo borrarPosteo(Long id);
+    void borrarPosteo(Long id);
     Posteo editarPosteo(Long id, Posteo posteoActualizado);
+    Posteo asignarAutor(Long idPosteo, Long idAutor);
+    Posteo agregarComentario(Long idAutor, Comment comentario);
+
 
 }

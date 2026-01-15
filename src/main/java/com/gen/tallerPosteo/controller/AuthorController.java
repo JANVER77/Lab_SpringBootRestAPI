@@ -2,6 +2,7 @@ package com.gen.tallerPosteo.controller;
 
 import com.gen.tallerPosteo.model.Author;
 import com.gen.tallerPosteo.service.IAuthorService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,12 +22,14 @@ public class AuthorController {
     }
 
     @PostMapping("/crear")
-    public Author crearAutor(@RequestBody Author autor){
-        return autorService.guardarAutor(autor);
+    public ResponseEntity<String> crearAutor(@RequestBody Author autor){
+        autorService.guardarAutor(autor);
+        return ResponseEntity.ok("Autor guardado exitosamente");
     }
 
     @GetMapping("/{id}")
     public Author obtenerAutor(@PathVariable Long id){
-        return autorService.
+        return null;
     }
+
 }

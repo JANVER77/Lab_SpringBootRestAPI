@@ -1,9 +1,9 @@
 package com.gen.tallerPosteo.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.gen.tallerPosteo.model.Posteo;
 import jakarta.persistence.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.List;
 
@@ -13,14 +13,15 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Autor;
+    @Column(nullable = false)
     private String nombre;
+    @Column(nullable = false)
     private String email;
 
 
-    @ManyToOne
-    @JoinColumn(name = "posteo_id")
-    @JsonBackReference
-    private Posteo posteo;
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Posteo> posteos;
 
     public Author() {
     }
@@ -56,11 +57,11 @@ public class Author {
         this.email = email;
     }
 
-    public Posteo getPosteo() {
-        return posteo;
+    public List<Posteo> getPosteos() {
+        return posteos;
     }
 
-    public void setPosteo(Posteo posteo) {
-        this.posteo = posteo;
+    public void setPosteos(List<Posteo> posteos) {
+        this.posteos = posteos;
     }
 }

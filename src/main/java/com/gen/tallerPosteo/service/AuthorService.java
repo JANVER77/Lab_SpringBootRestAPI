@@ -1,27 +1,29 @@
 package com.gen.tallerPosteo.service;
 
 import com.gen.tallerPosteo.model.Author;
-import com.gen.tallerPosteo.model.Comment;
-import com.gen.tallerPosteo.model.Posteo;
-import com.gen.tallerPosteo.repository.AuthorRepository;
-import com.gen.tallerPosteo.repository.CommentRepository;
-import jakarta.transaction.Transactional;
+import com.gen.tallerPosteo.repository.IAuthorRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AuthorService implements IAuthorService {
-    private final AuthorRepository autorRepository;
+    private final IAuthorRepository autorRepository;
 
-    public AuthorService(AuthorRepository autorRepository) {
+    public AuthorService(IAuthorRepository autorRepository) {
         this.autorRepository = autorRepository;
+    }
+
+
+    @Override
+    public List<Author> obtenerTodos() {
+        return autorRepository.findAll();
     }
 
     @Override
     public Optional<Author> obtenerPorId(Long id) {
-        Author autor = autorRepository.findById(id).orElseThrow();
-
-        return Optional.of();
+        return autorRepository.findById(id);
     }
 
     @Override
@@ -30,14 +32,8 @@ public class AuthorService implements IAuthorService {
     }
 
     @Override
-    public Author agregarPosteo(long autorId, Posteo posteo) {
+    public Author eliminarAutor(Long id) {
+        autorRepository.deleteById(id);
         return null;
     }
-
-    @Override
-    public List<Author> obtenerTodos() {
-        return autorRepository.findAll();
-    }
-
-
 }
