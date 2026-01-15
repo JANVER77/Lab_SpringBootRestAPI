@@ -384,6 +384,63 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "{\n    \"titulo\": \"Como mejorar comprension de lectura\",\n    \"autor\": {\n        \"id_Autor\": 2,\n        \"nombre\": \"gabriel garcia marquez\",\n        \"email\": \"gabo@cronica.com\"\n    },\n    \"comentarios\": [\n        {\n            \"id_Comentario\": 1,\n            \"text\": \"Excelente, aprender hacer esto, pero muy enredado\",\n            \"createdAt\": \"2024-01-15T10:30:00\"\n        }\n    ],\n    \"idPosteo\": 1\n}"
+				},
+				{
+					"id": "51325926-952eccc9-682c-42f6-9d9c-2c87c1a80206",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"Muy buen articulo falta ponerlo en practica\", \n    \"createdAt\": \"2026-01-15T03:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/publicaciones/2/comentarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publicaciones",
+								"2",
+								"comentarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Jan 2026 11:25:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"titulo\": \"Aprender a leer rapido y comprender lo leido\",\n    \"autor\": {\n        \"id_Autor\": 1,\n        \"nombre\": \"rafaelpombo\",\n        \"email\": \"pombo@rinrin.com\"\n    },\n    \"comentarios\": [\n        {\n            \"id_Comentario\": 2,\n            \"text\": \"Muy buen articulo falta ponerlo en practica\",\n            \"createdAt\": \"2026-01-15T03:30:00\"\n        }\n    ],\n    \"idPosteo\": 2\n}"
 				}
 			]
 		},
