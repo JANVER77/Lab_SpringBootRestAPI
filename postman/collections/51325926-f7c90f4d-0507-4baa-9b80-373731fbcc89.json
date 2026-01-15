@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "51325926-f7c90f4d-0507-4baa-9b80-373731fbcc89",
+		"name": "Lab_RestAPI_SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "todas",
+			"id": "51325926-b177790b-8444-4b1b-bd95-ffea39d54e4f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/publicaciones",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "porId",
+			"id": "51325926-88288412-a9ba-45ff-8963-44c5635ca267",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idPosteo\": 15,\n    \"titulo\": \"Como asustar a niños pjos\",\n    \"autor\": \"Robert Englud\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/publicaciones/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GuardarPosteo",
+			"id": "51325926-92627a9c-075e-496a-92f1-c37bcecca858",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Como mejorar comprension de lectura\",\n    \"autor\": \"Gabo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/publicaciones/postear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publicaciones",
+						"postear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BorrarPorId",
+			"id": "51325926-a00e13f0-540d-4be0-97e8-96bffeb068af",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/Publicaciones/borrar/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Publicaciones",
+						"borrar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar",
+			"id": "51325926-07db0e29-9ca1-43a6-ba71-f872873bb9be",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "nuevoAutor",
+			"id": "51325926-521464b0-dd5a-46de-8667-61058106cc6c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"gabriel garcia marquez\",\n    \"email\": \"gabo@cronicas.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/autores/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarAutores",
+			"id": "51325926-a51e0798-5b7c-47be-849f-0637c2aab65c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "asignarAutor",
+			"id": "51325926-12681351-30b5-4bf2-8eaf-2b3c122ec6c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
